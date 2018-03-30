@@ -26,6 +26,7 @@ if dein#load_state('/Users/cory.dickson/.local/share/dein/')
   call dein#add('elzr/vim-json', {'on_ft': 'json'})
   call dein#add('tpope/vim-markdown', {'on_ft': 'markdown'})
   call dein#add('dhruvasagar/vim-table-mode')
+  call dein#add('tomlion/vim-solidity')
   call dein#add('suan/vim-instant-markdown', {'on_ft': 'markdown'})
   call dein#add('HerringtonDarkholme/yats.vim')
   call dein#add('pangloss/vim-javascript')
@@ -58,10 +59,11 @@ if dein#load_state('/Users/cory.dickson/.local/share/dein/')
   call dein#add('junegunn/goyo.vim')
   call dein#add('junegunn/limelight.vim')
   call dein#add('rhysd/nyaovim-popup-tooltip')
+  call dein#add('beyondwords/vim-twig')
   call dein#add('tiagofumo/vim-nerdtree-syntax-highlight')
 
   " You can specify revision/branch/tag.
-  call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
+  call dein#add('Shougo/vimshell')
   " AWARENESS
   " status line
   call dein#add('vim-airline/vim-airline')
@@ -171,13 +173,15 @@ set wildignore+=*node_modules*
 " COLOR SCHEMES
 " set termguicolors
 " set background=light
-" set background=dark
+set background=dark
 " Unified color scheme (default: dark)
 " seoul256 (dark):
 "   Range:   233 (darkest) ~ 239 (lightest)
 "   Default: 237
-let g:seoul256_background = 236
-colo seoul256
+" let g:seoul256_background = 236
+" colo seoul256
+colorscheme  spring-night
+let g:airline_theme = 'spring_night'
 
 " NERDTree on left
 let g:NERDTreeWinPos = 'left'
@@ -185,3 +189,4 @@ let g:NERDTreeWinPos = 'left'
 " React configurations
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 let g:syntastic_javascript_checkers = ['eslint']
+
