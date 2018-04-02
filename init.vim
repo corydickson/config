@@ -17,34 +17,22 @@ if dein#load_state('/Users/cory.dickson/.local/share/dein/')
   " Add or remove your plugins here:
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/neosnippet-snippets')
-  call dein#add('othree/yajs.vim', {'on_ft': 'javascript'})
-  call dein#add('othree/jsdoc-syntax.vim', {'on_ft':['javascript', 'typescript']})
-  call dein#add('othree/es.next.syntax.vim', {'on_ft': 'javascript'})
-  call dein#add('1995eaton/vim-better-javascript-completion', {'on_ft': ['javascript']})
-  call dein#add('othree/javascript-libraries-syntax.vim')
   call dein#add('hail2u/vim-css3-syntax', {'on_ft':['css','scss']})
   call dein#add('elzr/vim-json', {'on_ft': 'json'})
   call dein#add('tpope/vim-markdown', {'on_ft': 'markdown'})
-  call dein#add('dhruvasagar/vim-table-mode')
   call dein#add('tomlion/vim-solidity')
-  call dein#add('suan/vim-instant-markdown', {'on_ft': 'markdown'})
-  call dein#add('HerringtonDarkholme/yats.vim')
   call dein#add('pangloss/vim-javascript')
   call dein#add('mxw/vim-jsx')
   call dein#add('Yggdroot/indentLine')
   call dein#add('Raimondi/delimitMate', {'on_ft': ['javascript', 'typescript', 'css', 'scss']})
   call dein#add('valloric/MatchTagAlways', {'on_ft': 'html'})
   call dein#add('tpope/vim-fugitive')
-  call dein#add('jreybert/vimagit')
   call dein#add('mhinz/vim-signify')
   call dein#add('Xuyuanp/nerdtree-git-plugin')
   call dein#add('tpope/vim-repeat')
   call dein#add('scrooloose/syntastic')
-  call dein#add('editorconfig/editorconfig-vim')
   call dein#add('vim-airline/vim-airline')
   call dein#add('tpope/vim-surround')
-  call dein#add('tomtom/tcomment_vim')
-  call dein#add('mattn/emmet-vim', {'on_ft': 'html'})
   call dein#add('Chiel92/vim-autoformat')
   call dein#add('ap/vim-css-color')
   call dein#add('bronson/vim-trailing-whitespace')
@@ -64,12 +52,15 @@ if dein#load_state('/Users/cory.dickson/.local/share/dein/')
 
   " You can specify revision/branch/tag.
   call dein#add('Shougo/vimshell')
+
   " AWARENESS
   " status line
   call dein#add('vim-airline/vim-airline')
   call dein#add('vim-airline/vim-airline-themes')
+
   " git status in NERDTree
   call dein#add('Xuyuanp/nerdtree-git-plugin')
+
   " git status in gutter
   call dein#add('airblade/vim-gitgutter')
 
