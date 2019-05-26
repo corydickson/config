@@ -7,9 +7,6 @@ export CLICOLOR=1
 # Set colors to match iTerm2 Terminal Colors
 export TERM=xterm-256color
 
-export AWS_ACCESS_KEY_ID=AKIAJ3W7V2YOBR5EL5WA
-export AWS_SECRET_ACCESS_KEY=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
-
 export PATH="$HOME/Library/Python/3.6/bin:$PATH"
 
 export PATH="$HOME/.cargo/bin:$PATH"
