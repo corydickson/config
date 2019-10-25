@@ -56,6 +56,7 @@ if dein#load_state('/Users/cory.dickson/.local/share/dein/')
 
   " COLORSCHEMES
   call dein#add('junegunn/seoul256.vim')
+  call dein#add('flrnprz/candid.vim')
 
   " FILE SYSTEM
   call dein#add('scrooloose/nerdtree')
@@ -152,15 +153,18 @@ map <C-n> :NERDTreeToggle<CR>
 set wildignore+=*node_modules*
 
 " COLOR SCHEMES
-" set termguicolors
+set termguicolors
 " set background=light
 set background=dark
 " Unified color scheme (default: dark)
 " seoul256 (dark):
 "   Range:   233 (darkest) ~ 239 (lightest)
 "   Default: 237
-let g:seoul256_background = 236
-colo seoul256
+" let g:seoul256_background = 236
+" colo seoul256
+syntax on
+colo candid
+
 
 " NERDTree on left
 let g:NERDTreeWinPos = 'left'
