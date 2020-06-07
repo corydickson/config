@@ -1,0 +1,185 @@
+;==========================================================
+;
+;
+;   \u2588\u2588\u2588\u2588\u2588\u2588\u2557  \u2588\u2588\u2588\u2588\u2588\u2588\u2557 \u2588\u2588\u2557  \u2588\u2588\u2557   \u2588\u2588\u2557\u2588\u2588\u2588\u2588\u2588\u2588\u2557  \u2588\u2588\u2588\u2588\u2588\u2557 \u2588\u2588\u2588\u2588\u2588\u2588\u2557
+;   \u2588\u2588\u2554\u2550\u2550\u2588\u2588\u2557\u2588\u2588\u2554\u2550\u2550\u2550\u2588\u2588\u2557\u2588\u2588\u2551  \u255a\u2588\u2588\u2557 \u2588\u2588\u2554\u255d\u2588\u2588\u2554\u2550\u2550\u2588\u2588\u2557\u2588\u2588\u2554\u2550\u2550\u2588\u2588\u2557\u2588\u2588\u2554\u2550\u2550\u2588\u2588\u2557
+;   \u2588\u2588\u2588\u2588\u2588\u2588\u2554\u255d\u2588\u2588\u2551   \u2588\u2588\u2551\u2588\u2588\u2551   \u255a\u2588\u2588\u2588\u2588\u2554\u255d \u2588\u2588\u2588\u2588\u2588\u2588\u2554\u255d\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2551\u2588\u2588\u2588\u2588\u2588\u2588\u2554\u255d
+;   \u2588\u2588\u2554\u2550\u2550\u2550\u255d \u2588\u2588\u2551   \u2588\u2588\u2551\u2588\u2588\u2551    \u255a\u2588\u2588\u2554\u255d  \u2588\u2588\u2554\u2550\u2550\u2588\u2588\u2557\u2588\u2588\u2554\u2550\u2550\u2588\u2588\u2551\u2588\u2588\u2554\u2550\u2550\u2588\u2588\u2557
+;   \u2588\u2588\u2551     \u255a\u2588\u2588\u2588\u2588\u2588\u2588\u2554\u255d\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2557\u2588\u2588\u2551   \u2588\u2588\u2588\u2588\u2588\u2588\u2554\u255d\u2588\u2588\u2551  \u2588\u2588\u2551\u2588\u2588\u2551  \u2588\u2588\u2551
+;   \u255a\u2550\u255d      \u255a\u2550\u2550\u2550\u2550\u2550\u255d \u255a\u2550\u2550\u2550\u2550\u2550\u2550\u255d\u255a\u2550\u255d   \u255a\u2550\u2550\u2550\u2550\u2550\u255d \u255a\u2550\u255d  \u255a\u2550\u255d\u255a\u2550\u255d  \u255a\u2550\u255d
+;
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/jaagr/polybar
+;
+;   The README contains alot of information
+;
+;==========================================================
+ 
+[colors]
+background = #1d1f21
+background-alt = #282a2e
+foreground = #ffffffff
+foreground-alt = #fafafa
+primary = #ccffffff
+secondary = #e60053
+alert = #cc6666
+ 
+[bar/example]
+width = 100%
+# offset-x = 10%
+# offzet-y = 10%
+height = 29
+radius = 0
+fixed-center = true
+ 
+background = ${colors.background}
+foreground = ${colors.foreground}
+ 
+;background-0 = #ff111111
+;background-1 = #00999999
+;no-dock-shadow = false;
+ 
+line-size = 1
+line-color = #f00
+ 
+border-size = 8
+border-color = #00000000
+ 
+padding-left = 0
+padding-right = 2
+ 
+module-margin-left = 1
+module-margin-right = 1
+ 
+font-0 = InconsolataNerdFont:style=Regular:size=11;3
+font-1 = FontAwesome5Free:style=Solid:size=10;4
+font-2 = FontAwesome5Icons:style=Regular:size=10;4
+font-3 = FontAwesome5Brands:style=Regular:size=10;4
+
+modules-left = i3
+modules-center = date time-local
+modules-right = ticker-crypto network-status battery-status
+
+tray-position = right
+tray-padding = 8
+tray-detached = false    
+tray-offset-x = 0
+;tray-background = #0063ff
+ 
+;scroll-up = i3wm-wsnext
+;scroll-down = i3wm-wsprev
+ 
+cursor-click = pointer
+cursor-scroll = ns-resize
+ 
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-default = 
+; Only show workspaces on the same output as the bar
+;pin-workspaces = true
+ 
+label-mode-padding = 0
+label-mode-foreground = #000
+label-mode-background = ${colors.primary}
+ 
+; focused = Active workspace on focused monitor
+label-focused = %icon%
+label-focused-background = ${colors.background-alt}
+label-focused-underline = ${colors.primary}
+label-focused-padding = 2
+ 
+; unfocused = Inactive workspace on any monitor
+label-unfocused = %name% %icon%
+label-unfocused-padding = 1
+ 
+; visible = Active workspace on unfocused monitor
+label-visible = %name%
+label-visible-background = ${self.label-focused-background}
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
+ 
+; urgent = Workspace with urgency hint set
+label-urgent = %index%
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 2
+ 
+; Separator in between workspaces
+; label-separator = |
+ 
+[module/date]
+type = internal/date
+
+; Seconds to sleep between updates
+; Default: 1.0
+interval = 1.0
+
+; See "https://en.cppreference.com/w/cpp/io/manip/put_time" for details on how to format the date string
+; NOTE: if you want to use syntax tags here you need to use %%{...}
+date = %B, %d %Y
+
+; Optional time format
+time = %H:%M
+
+; if `date-alt` or `time-alt` is defined, clicking
+; the module will toggle between formats
+date-alt = %A, %d %B %Y
+time-alt = %H:%M:%S
+; Available tags:
+;   <label> (default)
+format = <label>
+; Available tokens:
+;   %date%
+;   %time%
+; Default: %date%
+label = %date%
+
+[module/time-local]
+type = custom/script
+exec = TZ=America/New_York date +"%H:%M EDT  "
+interval = 30
+
+[module/ticker-crypto]
+type = custom/script
+exec = ~/.config/polybar/scripts/ticker-crypto.sh
+interval = 100
+
+[module/battery-status]
+type = custom/script
+exec = ~/.config/polybar/scripts/battery-status.sh
+interval = 30
+
+[module/network-status]
+type = custom/script
+exec = ~/.config/polybar/scripts/network-status.sh
+interval = 30
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[settings]
+screenchange-reload = true
+;compositing-background = multiply
+;compositing-background = hsl-luminosity
+;compositing-foreground = xor
+;compositing-overline = over
+;compositing-underline = over
+;compositing-border = over
+;compositing-border = over
+;pseudo-transparency = false
+throttle-output = 5
+throttle-output-for = 10
+throttle-input-for = 30
+ 
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+ 
+; vim:ft=dosini
