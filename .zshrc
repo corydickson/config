@@ -9,6 +9,9 @@ export GIT_PS1_SHOWUNTRACKEDFILES=true
 export GIT_PS1_SHOWCOLORHINTS=true
 export GIT_PS1_SHOWDIRTYSTATE=true
 
+# ssh keychain
+eval `keychain --eval --quiet --agents ssh id_ed25519`
+
 setopt extendedglob
 unsetopt beep
 
@@ -19,7 +22,7 @@ compinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist
 compinit
-_comp_options+=(globdots)	
+_comp_options+=(globdots)
 
 autoload -Uz promptinit
 promptinit
