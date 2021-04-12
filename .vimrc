@@ -114,11 +114,13 @@ nnoremap <Leader>0 :10b<CR>
 " Shortcuts
 nnoremap <leader>u :UndotreeShow<CR>
 nnoremap <leader>r :Rg<SPACE>
-nnoremap <leader>g :Goyo<CR>
+" Git shortcuts
+nmap <leader>gs :G<CR>
+" System clipboard
+vnoremap <C-c> "+y
 ino jj <ESC>
 vno v <ESC>
 noremap ; :
-
 " Searching
 set wildignore+=*node_modules*
 
