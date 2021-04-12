@@ -25,6 +25,8 @@ set updatetime=50
 set encoding=utf-8
 set termguicolors
 set splitbelow splitright
+set foldmethod=syntax
+set nofoldenable
 
 " Plugins
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -91,13 +93,26 @@ let mapleader = " "
 
 let g:ctrlp_use_caching = 0
 
-" Mappings
+" Window Navigations
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
+" Buffer switching
+nnoremap <Leader>b :bp<CR>
+nnoremap <Leader>f :bn<CR>
+nnoremap <Leader>1 :1b<CR>
+nnoremap <Leader>2 :2b<CR>
+nnoremap <Leader>3 :3b<CR>
+nnoremap <Leader>4 :4b<CR>
+nnoremap <Leader>5 :5b<CR>
+nnoremap <Leader>6 :6b<CR>
+nnoremap <Leader>7 :7b<CR>
+nnoremap <Leader>8 :8b<CR>
+nnoremap <Leader>9 :9b<CR>
+nnoremap <Leader>0 :10b<CR>
+" Shortcuts
 nnoremap <leader>u :UndotreeShow<CR>
-nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
 nnoremap <leader>r :Rg<SPACE>
 nnoremap <leader>g :Goyo<CR>
 ino jj <ESC>
