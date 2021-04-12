@@ -4,16 +4,15 @@ set hidden
 set showcmd
 set showmatch
 set showmode
-set hlsearch
+set nohlsearch
 set noerrorbells
-set tabstop=2
-set shiftwidth=2
+set tabstop=4 softtabstop=4
+set shiftwidth=4
 set expandtab
+set smartindent
 set number
-set nu
 set relativenumber
 set nowrap
-set smartcase
 set noswapfile
 set nobackup
 set undodir=~/.vim/undodir
@@ -24,6 +23,7 @@ set ignorecase
 set smartcase
 set updatetime=50
 set encoding=utf-8
+set termguicolors
 set splitbelow splitright
 
 " Plugins
