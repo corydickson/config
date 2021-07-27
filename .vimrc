@@ -41,6 +41,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'dracula/vim'
 Plug 'beikome/cosme.vim'
 Plug 'junegunn/seoul256.vim'
+Plug 'sainnhe/gruvbox-material'
 
 " Awareness & Tooling
 Plug 'tpope/vim-surround'
@@ -53,8 +54,6 @@ Plug 'lyuts/vim-rtags'
 Plug 'vim-utils/vim-man'
 Plug 'Valloric/YouCompleteMe'
 Plug 'mbbill/undotree'
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
 
 " Formatting
 Plug 'Yggdroot/indentLine'
@@ -70,6 +69,7 @@ Plug 'bronson/vim-trailing-whitespace'
 " Search
 Plug 'kien/ctrlp.vim'
 Plug 'jremmen/vim-ripgrep'
+Plug 'junegunn/fzf'
 
 call plug#end()
 
@@ -94,26 +94,25 @@ let mapleader = " "
 let g:ctrlp_use_caching = 0
 
 " Window Navigations
-nnoremap <leader>h :wincmd h<CR>
-nnoremap <leader>j :wincmd j<CR>
-nnoremap <leader>k :wincmd k<CR>
-nnoremap <leader>l :wincmd l<CR>
+nnoremap <C-H> :wincmd h<CR>
+nnoremap <C-J> :wincmd j<CR>
+nnoremap <C-K> :wincmd k<CR>
+nnoremap <C-L> :wincmd l<CR>
+" Resizing Windows
+nnoremap <leader>, <C-W>5<
+nnoremap <leader>. <C-W>5>
+nnoremap <leader>n <C-W>5+
+nnoremap <leader>m <C-W>5-
 " Buffer switching
-nnoremap <Leader>b :bp<CR>
-nnoremap <Leader>f :bn<CR>
-nnoremap <Leader>1 :1b<CR>
-nnoremap <Leader>2 :2b<CR>
-nnoremap <Leader>3 :3b<CR>
-nnoremap <Leader>4 :4b<CR>
-nnoremap <Leader>5 :5b<CR>
-nnoremap <Leader>6 :6b<CR>
-nnoremap <Leader>7 :7b<CR>
-nnoremap <Leader>8 :8b<CR>
-nnoremap <Leader>9 :9b<CR>
-nnoremap <Leader>0 :10b<CR>
+nnoremap <Leader>b :e#<CR>
+nnoremap <Leader>v :bn<CR>
 " Shortcuts
 nnoremap <leader>u :UndotreeShow<CR>
 nnoremap <leader>r :Rg<SPACE>
+nnoremap <leader>p :FZF<CR>
+nnoremap <leader>gr :YcmCompleter GoToReferences<CR>
+nnoremap <leader>gt :YcmCompleter GoTo<CR>
+nnoremap <leader>f :YcmCompleter FixIt<CR>
 " Git shortcuts
 nmap <leader>gs :G<CR>
 " System clipboard
@@ -126,12 +125,6 @@ set wildignore+=*node_modules*
 
 " set filetypes as typescript.tsx
 autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
-
-" Goyo focus
-let g:limelight_conceal_ctermfg = 'gray'
-let g:limelight_conceal_ctermfg = 200
-autocmd User GoyoEnter Limelight
-autocmd User GoyoLeave Limelight!
 
 " Airline config
 let g:airline#extensions#tabline#enabled = 1
@@ -162,6 +155,17 @@ hi ReactLifeCycleMethods ctermfg=204 guifg=#D19A66
 hi tsxTypeBraces guifg=#999999
 " dark-grey
 hi tsxTypes guifg=#666666
+
+function! ClearRegisters()
+    let regs='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/-="*+'
+    let i=0
+    while (i<strlen(regs))
+        exec 'let @'.regs[i].'=""'
+        let i=i+1
+    endwhile
+endfunction
+
+command! ClearRegisters call ClearRegisters()
 
 " Generate Docs
 packloadall
