@@ -1,0 +1,8 @@
+require('plugins')
+require('set')
+require('colorscheme')
+require('keymaps')
+require('lsp')
+require('debugger')
+require('completion')
+require('telescope')
